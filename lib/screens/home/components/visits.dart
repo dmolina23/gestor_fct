@@ -48,8 +48,8 @@ class VisitsComponent extends StatelessWidget {
                 child: Align(
                   alignment: const AlignmentDirectional(0, 0),
                   child: TableCalendar(
-                    firstDay: DateTime.utc(2022, 5, 1),
-                    lastDay: DateTime.utc(2022, 5, 31),
+                    firstDay: DateTime.utc(2022, 6, 1),
+                    lastDay: DateTime.utc(2022, 6, 31),
                     focusedDay: DateTime.now(),
                     locale: 'en_US',
                     startingDayOfWeek: StartingDayOfWeek.monday,

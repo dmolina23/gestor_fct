@@ -14,7 +14,9 @@ ThemeData ligthThemeData(BuildContext context) {
         error: kErrorColor, 
       ),
       textTheme: const TextTheme(
-        bodyText1: TextStyle(fontSize: 14, color: primaryText, fontFamily: 'Poppins', fontWeight: FontWeight.w800)
+        bodyText1: TextStyle(fontSize: 14, color: primaryText, fontFamily: 'Poppins', fontWeight: FontWeight.w800),
+        headline1: TextStyle(fontSize: 24, color: primaryText, fontFamily: 'Poppins', fontWeight: FontWeight.w800),
+        headline2: TextStyle(fontSize: 22, color: secondaryText, fontFamily: 'Poppins', fontWeight: FontWeight.w800)
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         backgroundColor: backgroundColor,

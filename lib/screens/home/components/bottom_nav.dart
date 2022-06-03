@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gestor_fct/constants.dart';
+import 'package:gestor_fct/screens/settings/settings.dart';
 
 class BottomNav extends StatelessWidget {
   const BottomNav({Key? key}) : super(key: key);
@@ -66,7 +67,9 @@ class BottomNav extends StatelessWidget {
                           color: Colors.black,
                           size: 30,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/settings');
+                        },
                       ),
                     ],
                   ),
