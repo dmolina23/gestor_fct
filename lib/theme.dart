@@ -15,6 +15,7 @@ ThemeData ligthThemeData(BuildContext context) {
       ),
       textTheme: const TextTheme(
         bodyText1: TextStyle(fontSize: 14, color: primaryText, fontFamily: 'Poppins', fontWeight: FontWeight.w800),
+        bodyText2: TextStyle(fontSize: 12, color: secondaryText, fontFamily: 'Poppins', fontWeight: FontWeight.w800),
         headline1: TextStyle(fontSize: 24, color: primaryText, fontFamily: 'Poppins', fontWeight: FontWeight.w800),
         headline2: TextStyle(fontSize: 22, color: secondaryText, fontFamily: 'Poppins', fontWeight: FontWeight.w800)
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gestor_fct/screens/companies/companies.dart';
 import 'package:gestor_fct/screens/home/home.dart';
 import 'package:gestor_fct/screens/settings/settings.dart';
 import 'package:gestor_fct/theme.dart';
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
       home: const HomeScreen(),
       initialRoute: '/',
       routes: {
-        '/settings':(context) => SettingsScreen()
+        '/settings': (context) => SettingsScreen(),
+        '/companies': (context) => const CompaniesScreen()
       },
     );
   }

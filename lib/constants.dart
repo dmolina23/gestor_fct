@@ -9,5 +9,6 @@ const primaryText = Color(0xFF1D1D35);
 const secondaryText = Color.fromARGB(255, 87, 99, 108);
 const backgroundColor = Color.fromARGB(255, 241, 244, 248);
 const buttonPrimary = Color(0xFF228F22);
+const lineColor = Color.fromARGB(255, 224, 227, 231);
 
 const kDefaultPadding = 20.0;

@@ -13,13 +13,34 @@ class CompaniesTitle extends StatelessWidget {
         decoration: const BoxDecoration(),
         child: Padding(
           padding: const EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
-          child: Text(
-            'Mis empresas',
-            textAlign: TextAlign.start,
-            style: Theme.of(context).textTheme.bodyText1?.copyWith(
-              fontFamily: 'Poppins',
-              fontSize: 26
-            ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                child: Text(
+                  'Mis empresas',
+                  textAlign: TextAlign.start,
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyText1
+                      ?.copyWith(fontFamily: 'Poppins', fontSize: 26),
+                ),
+              ),
+              IconButton(
+                iconSize: 60,
+                // ignore: prefer_const_constructors
+                icon: Icon(
+                  Icons.arrow_forward_ios,
+                  color: Colors.black,
+                  size: 30,
+                ),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/companies');
+                },
+              )
+            ],
           ),
         ),
       ),
