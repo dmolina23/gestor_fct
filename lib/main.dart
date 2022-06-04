@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gestor_fct/screens/companies/companies.dart';
 import 'package:gestor_fct/screens/home/home.dart';
 import 'package:gestor_fct/screens/settings/settings.dart';
+import 'package:gestor_fct/screens/students/students.dart';
 import 'package:gestor_fct/theme.dart';
 
 void main() {
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/settings': (context) => SettingsScreen(),
-        '/companies': (context) => const CompaniesScreen()
+        '/companies': (context) => const CompaniesScreen(),
+        '/students': (context) => const StudentsScreen()
       },
     );
   }

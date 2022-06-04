@@ -46,7 +46,9 @@ class BottomNav extends StatelessWidget {
                           color: Colors.black,
                           size: 30,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/students');
+                        },
                       ),
                       const Spacer(),
                       IconButton(
