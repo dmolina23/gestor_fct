@@ -53,7 +53,7 @@ class BottomNav extends StatelessWidget {
                         splashRadius: 30,
                         iconSize: 60,
                         icon: const Icon(
-                          Icons.location_city,
+                          Icons.article,
                           color: Colors.black,
                           size: 30,
                         ),
