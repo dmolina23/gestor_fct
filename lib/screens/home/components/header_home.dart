@@ -7,7 +7,7 @@ class HeaderHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         width: double.infinity,
-        height: 120,
+        height: 110,
         decoration: const BoxDecoration(
           color: Color(0xFFEEEEEE),
           boxShadow: [

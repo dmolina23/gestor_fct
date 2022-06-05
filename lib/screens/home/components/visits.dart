@@ -14,7 +14,7 @@ class VisitsComponent extends StatelessWidget {
       padding: const EdgeInsetsDirectional.fromSTEB(20, 20, 20, 0),
       child: Container(
         width: double.infinity,
-        height: 40,
+        height: 30,
         decoration: const BoxDecoration(),
         child: Column(
           mainAxisSize: MainAxisSize.max,

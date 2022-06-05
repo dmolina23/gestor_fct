@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gestor_fct/constants.dart';
+import 'package:gestor_fct/screens/home/components/add.dart';
 import 'package:gestor_fct/screens/settings/settings.dart';
 
 class BottomNav extends StatelessWidget {
@@ -11,7 +12,7 @@ class BottomNav extends StatelessWidget {
       padding: const EdgeInsetsDirectional.fromSTEB(0, 35, 0, 0),
       child: SizedBox(
         width: double.infinity,
-        height: 80,
+        height: 100,
         child: Stack(
           children: [
             Padding(
@@ -78,29 +79,11 @@ class BottomNav extends StatelessWidget {
                 ),
               ),
             ),
-            Align(
-              alignment: const AlignmentDirectional(0, 0),
+            const Align(
+              alignment: AlignmentDirectional(0, 0),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
-                child: Container(
-                  width: 60,
-                  height: 60,
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF228F22),
-                    borderRadius: BorderRadius.circular(50),
-                  ),
-                  child: IconButton(
-                    splashRadius: 30,
-                    iconSize: 60,
-                    icon: const Icon(
-                      Icons.add,
-                      color: Colors.white,
-                      size: 30,
-                    ),
-                    onPressed: () {},
-                  ),
-                ),
-              ),
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                  child: AddComponent()),
             ),
           ],
         ),
