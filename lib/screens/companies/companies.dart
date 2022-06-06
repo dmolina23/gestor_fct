@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gestor_fct/constants.dart';
+import 'package:gestor_fct/screens/companyDetail/company_detail.dart';
 import 'package:gestor_fct/screens/home/home.dart';
 
 class CompaniesScreen extends StatelessWidget {
@@ -82,12 +83,12 @@ class CompaniesScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(16, 12, 16, 0),
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(16, 12, 16, 0),
                         child: Container(
                           width: double.infinity,
                           decoration: BoxDecoration(
-                            color:
-                                backgroundColor,
+                            color: backgroundColor,
                             boxShadow: [
                               const BoxShadow(
                                 blurRadius: 17,
@@ -98,8 +99,8 @@ class CompaniesScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: Padding(
-                            padding:
-                                const EdgeInsetsDirectional.fromSTEB(8, 8, 12, 8),
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                8, 8, 12, 8),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -124,24 +125,35 @@ class CompaniesScreen extends StatelessWidget {
                                     children: [
                                       Text(
                                         'Bosonit',
-                                        style:
-                                            Theme.of(context).textTheme.headline1,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .headline1,
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 10),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(0, 0, 0, 10),
                                         child: Text(
                                           'Tech & Data',
-                                          style: Theme.of(context).textTheme
+                                          style: Theme.of(context)
+                                              .textTheme
                                               .bodyText1,
                                         ),
                                       ),
                                       TextButton(
                                         onPressed: () {
-                                        
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const CompanyDetail(
+                                                        companyName: 'Bosonit',
+                                                      )));
                                         },
+                                        style: TextButton.styleFrom(
+                                            primary: Colors.white,
+                                            backgroundColor: Color(0xFF228F22),
+                                            shape: const StadiumBorder()),
                                         child: const Text('Ver detalles'),
-                                       
                                       )
                                     ],
                                   ),

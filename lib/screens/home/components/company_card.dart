@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:gestor_fct/screens/companyDetail/company_detail.dart';
 
 class CompanyCard extends StatelessWidget {
   const CompanyCard({Key? key}) : super(key: key);
@@ -51,7 +51,18 @@ class CompanyCard extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(0, 14, 0, 0),
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const CompanyDetail(
+                                      companyName: 'Bosonit',
+                                    )));
+                      },
+                      style: TextButton.styleFrom(
+                          primary: Colors.white,
+                          backgroundColor: const Color(0xFF228F22),
+                          shape: const StadiumBorder()),
                       child: const Text("Ver detalles"),
                     ),
                   ),

@@ -129,6 +129,11 @@ class StudentsScreen extends StatelessWidget {
                                       ),
                                       TextButton(
                                         onPressed: () {},
+                                        style: TextButton.styleFrom(
+                                            primary: Colors.white,
+                                            backgroundColor:
+                                                const Color(0xFF228F22),
+                                            shape: const StadiumBorder()),
                                         child: const Text('Ver detalles'),
                                       )
                                     ],
