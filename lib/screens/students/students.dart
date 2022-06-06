@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gestor_fct/constants.dart';
+import 'package:gestor_fct/screens/studentDetail/student_detail.dart';
 
 class StudentsScreen extends StatelessWidget {
   const StudentsScreen({Key? key}) : super(key: key);
@@ -128,7 +129,13 @@ class StudentsScreen extends StatelessWidget {
                                             .headline1,
                                       ),
                                       TextButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const StudentDetail()));
+                                        },
                                         style: TextButton.styleFrom(
                                             primary: Colors.white,
                                             backgroundColor:
