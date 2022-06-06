@@ -60,7 +60,9 @@ class BottomNav extends StatelessWidget {
                           color: Colors.black,
                           size: 30,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/deals');
+                        },
                       ),
                       IconButton(
                         splashRadius: 30,
