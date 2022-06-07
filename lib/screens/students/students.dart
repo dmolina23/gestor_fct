@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gestor_fct/constants.dart';
-import 'package:gestor_fct/screens/studentDetail/student_detail.dart';
-import 'package:gestor_fct/screens/students/components/student_card.dart';
 import 'package:gestor_fct/screens/students/components/students_list.dart';
 
 class StudentsScreen extends StatelessWidget {

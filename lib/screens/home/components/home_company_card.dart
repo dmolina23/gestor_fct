@@ -55,9 +55,7 @@ class CompanyCard extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const CompanyDetail(
-                                      companyName: 'Bosonit',
-                                    )));
+                                builder: (context) => const CompanyDetail(id: "1"))); //TODO: Cambiar por el id de la query
                       },
                       style: TextButton.styleFrom(
                           primary: Colors.white,

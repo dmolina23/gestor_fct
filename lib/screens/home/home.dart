@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gestor_fct/screens/home/components/companies_title.dart';
 import 'package:gestor_fct/screens/home/components/bottom_nav.dart';
-import 'package:gestor_fct/screens/home/components/companies_list.dart';
+import 'package:gestor_fct/screens/home/components/home_companies_list.dart';
 import 'package:gestor_fct/screens/home/components/header_home.dart';
 import 'package:gestor_fct/screens/home/components/visits.dart';
 
@@ -26,7 +26,7 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       const HeaderHome(),
                       const CompaniesTitle(),
-                      const CompaniesList(),
+                      const HomeCompaniesList(),
                       const VisitsComponent(),
                       Padding(
                         padding:

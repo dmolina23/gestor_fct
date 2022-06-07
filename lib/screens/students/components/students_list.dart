@@ -32,12 +32,6 @@ class _StudentListState extends State<StudentList> {
             );
           }
 
-          if (result.isLoading) {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-
           List? students = result.data!['getAllStudents'];
 
           if (students == null) {
@@ -46,6 +40,7 @@ class _StudentListState extends State<StudentList> {
 
           Future<void> _refresh() async {
             refetch!();
+            return Future.delayed(const Duration(milliseconds: 500));
           }
 
           return RefreshIndicator(

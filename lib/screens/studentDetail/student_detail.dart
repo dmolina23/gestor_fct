@@ -1,12 +1,7 @@
 // ignore_for_file: unnecessary_const
 
-import 'dart:convert';
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:gestor_fct/constants.dart';
-import 'package:gestor_fct/screens/companies/companies.dart';
-import 'package:gestor_fct/screens/home/home.dart';
 import 'package:gestor_fct/screens/students/students.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
