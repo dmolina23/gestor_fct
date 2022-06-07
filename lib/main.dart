@@ -5,9 +5,25 @@ import 'package:gestor_fct/screens/home/home.dart';
 import 'package:gestor_fct/screens/settings/settings.dart';
 import 'package:gestor_fct/screens/students/students.dart';
 import 'package:gestor_fct/theme.dart';
+import 'package:graphql_flutter/graphql_flutter.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  await initHiveForFlutter();
+  final HttpLink link =
+      HttpLink("http://192.168.0.16:3000/graph", defaultHeaders: {
+    'x-token':
+        'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBhZG1pbi5lcyJ9.rDYixKNR9HTvvnTHpeK3pqUvy7oW_574mvhPCRqGlJs'
+  });
+
+  ValueNotifier<GraphQLClient> client = ValueNotifier(GraphQLClient(
+    link: link,
+    cache: GraphQLCache(store: HiveStore()),
+  ));
+
+  runApp(GraphQLProvider(
+    client: client,
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
