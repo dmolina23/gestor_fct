@@ -1,13 +1,15 @@
+
 import 'package:flutter/material.dart';
 import 'package:gestor_fct/constants.dart';
 
 import '../../studentDetail/student_detail.dart';
 
 class StudentCard extends StatelessWidget {
-  const StudentCard({Key? key, required this.firstName, required this.lastName}) : super(key: key);
+  const StudentCard({Key? key, required this.firstName, required this.lastName, required this.id}) : super(key: key);
 
   final String firstName;
   final String lastName;
+  final String id;
 
 
   @override
@@ -18,8 +20,8 @@ class StudentCard extends StatelessWidget {
         width: double.infinity,
         decoration: BoxDecoration(
           color: backgroundColor,
-          boxShadow: [
-            const BoxShadow(
+          boxShadow: const [
+            BoxShadow(
               blurRadius: 17,
               color: Colors.black26,
               spreadRadius: 5,
@@ -50,7 +52,7 @@ class StudentCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "${this.lastName}, ${this.firstName}",
+                      "$lastName, $firstName",
                       style: Theme.of(context).textTheme.headline1,
                     ),
                     TextButton(
@@ -58,7 +60,7 @@ class StudentCard extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const StudentDetail()));
+                                builder: (context) => StudentDetail(id: id)));
                       },
                       style: TextButton.styleFrom(
                           primary: Colors.white,

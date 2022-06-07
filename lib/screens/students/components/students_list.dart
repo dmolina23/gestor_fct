@@ -2,12 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:gestor_fct/screens/students/components/student_card.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
-class StudentList extends StatelessWidget {
+class StudentList extends StatefulWidget {
   const StudentList({Key? key}) : super(key: key);
 
-  final String readAllTeachers = """
+  @override
+  _StudentListState createState() => _StudentListState();
+}
+
+class _StudentListState extends State<StudentList> {
+  final String readAllStudents = """
     query {
-      getAllTeachers {
+      getAllStudents {
+          id
           firstName
           lastName
        }
@@ -16,40 +22,45 @@ class StudentList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Query(
-          options: QueryOptions(document: gql(readAllTeachers)),
-          builder: (QueryResult result,
-              {VoidCallback? refetch, FetchMore? fetchMore}) {
-            if (result.hasException) {
-              return Center(
-                child: Text(result.exception.toString()),
-              );
-            }
+    return Query(
+        options: QueryOptions(document: gql(readAllStudents)),
+        builder: (QueryResult result,
+            {VoidCallback? refetch, FetchMore? fetchMore}) {
+          if (result.hasException) {
+            return Center(
+              child: Text(result.exception.toString()),
+            );
+          }
 
-            if (result.isLoading) {
-              return const Center(
-                child: CircularProgressIndicator(),
-              );
-            }
+          if (result.isLoading) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
 
-            List? teachers = result.data!['getAllTeachers'];
+          List? students = result.data!['getAllStudents'];
 
-            if (teachers == null) {
-              return const Text('No Teachers');
-            }
+          if (students == null) {
+            return const Text('No hay alumnos todavía');
+          }
 
-            return ListView.builder(
-                itemCount: teachers.length,
+          Future<void> _refresh() async {
+            refetch!();
+          }
+
+          return RefreshIndicator(
+            onRefresh: _refresh,
+            child: ListView.builder(
+                itemCount: students.length,
                 itemBuilder: (context, index) {
-                  final teacher = teachers[index];
+                  final student = students[index];
 
                   return StudentCard(
-                    firstName: teacher['firstName'],
-                    lastName: teacher['lastName'],
-                  );
-                });
-          }),
-    );
+                      firstName: student['firstName'],
+                      lastName: student['lastName'],
+                      id: student['id']);
+                }),
+          );
+        });
   }
 }
