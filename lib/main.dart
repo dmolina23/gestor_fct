@@ -12,7 +12,7 @@ void main() async {
   final HttpLink link =
       HttpLink("http://192.168.0.16:3000/graph", defaultHeaders: {
     'x-token':
-        'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBhZG1pbi5lcyJ9.rDYixKNR9HTvvnTHpeK3pqUvy7oW_574mvhPCRqGlJs'
+        'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZW1haWwiOiJhZG1pbkBhZG1pbi5lcyJ9.-zaePKKAlHV3btJnHdo7A2TqYwO9EHehYGbXiacUCmc'
   });
 
   ValueNotifier<GraphQLClient> client = ValueNotifier(GraphQLClient(
