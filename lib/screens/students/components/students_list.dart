@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gestor_fct/components/error.dart';
 import 'package:gestor_fct/screens/students/components/student_card.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
@@ -27,15 +28,15 @@ class _StudentListState extends State<StudentList> {
         builder: (QueryResult result,
             {VoidCallback? refetch, FetchMore? fetchMore}) {
           if (result.hasException) {
-            return Center(
-              child: Text(result.exception.toString()),
+            return Error(
+              error: result.exception.toString(),
             );
           }
 
           List? students = result.data!['getAllStudents'];
 
           if (students == null) {
-            return const Text('No hay alumnos todavía');
+            return const Error(error: 'No hay alumnos todavía');
           }
 
           Future<void> _refresh() async {

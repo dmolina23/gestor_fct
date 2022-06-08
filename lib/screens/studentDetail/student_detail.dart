@@ -1,6 +1,7 @@
 // ignore_for_file: unnecessary_const
 
 import 'package:flutter/material.dart';
+import 'package:gestor_fct/components/error.dart';
 import 'package:gestor_fct/constants.dart';
 import 'package:gestor_fct/screens/students/students.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
@@ -68,8 +69,8 @@ class _StudentDetailState extends State<StudentDetail> {
                   builder: (QueryResult result,
                       {VoidCallback? refetch, FetchMore? fetchMore}) {
                     if (result.hasException) {
-                      return Center(
-                        child: Text(result.exception.toString()),
+                      return Error(
+                        error: result.exception.toString(),
                       );
                     }
 

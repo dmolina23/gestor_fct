@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:gestor_fct/screens/home/home.dart';
 
 class CompanyDetail extends StatefulWidget {
-  const CompanyDetail({Key? key, required this.companyName}) : super(key: key);
+  const CompanyDetail({Key? key, required this.id}) : super(key: key);
 
-  final String companyName;
+  final String id;
 
   @override
   _CompanyDetailState createState() => _CompanyDetailState();

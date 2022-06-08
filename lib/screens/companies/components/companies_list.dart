@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gestor_fct/components/error.dart';
 import 'package:gestor_fct/screens/companies/components/company_card.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
@@ -27,8 +28,8 @@ class _CompanyListState extends State<CompanyList> {
         builder: (QueryResult result,
             {VoidCallback? refetch, FetchMore? fetchMore}) {
           if (result.hasException) {
-            return Center(
-              child: Text(result.exception.toString()),
+            return Error(
+              error: result.exception.toString(),
             );
           }
 
