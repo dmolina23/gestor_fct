@@ -33,6 +33,12 @@ class _StudentListState extends State<StudentList> {
             );
           }
 
+          if (result.isLoading) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+
           List? students = result.data!['getAllStudents'];
 
           if (students == null) {

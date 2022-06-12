@@ -32,6 +32,12 @@ query {
             );
           }
 
+          if (result.isLoading) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+
           List? deals = result.data!['getAllDeals'];
 
           if (deals == null) {

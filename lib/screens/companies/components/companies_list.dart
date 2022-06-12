@@ -33,6 +33,12 @@ class _CompanyListState extends State<CompanyList> {
             );
           }
 
+          if (result.isLoading) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+          
           List? companies = result.data!['getAllCompanies'];
 
           if (companies == null) {

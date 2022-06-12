@@ -41,14 +41,6 @@ class DealCard extends StatelessWidget {
                       company,
                       style: Theme.of(context).textTheme.headline1,
                     ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
-                      child: Text(
-                        'Tech & Data',
-                        style: Theme.of(context).textTheme.bodyText1,
-                      ),
-                    ),
                   ],
                 ),
               ),
