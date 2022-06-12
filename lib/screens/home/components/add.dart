@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:gestor_fct/constants.dart';
+import 'package:gestor_fct/screens/createDeal/createDeal.dart';
 import 'package:gestor_fct/screens/createStudent/createStudent.dart';
 
 class AddComponent extends StatefulWidget {
@@ -143,7 +144,7 @@ class _AddComponentState extends State<AddComponent>
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const CreateStudent(),
+                      builder: (context) => const CreateDeal(),
                     ));
               },
             ),
