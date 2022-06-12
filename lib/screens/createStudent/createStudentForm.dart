@@ -55,6 +55,7 @@ class _CreateStudentFormState extends State<CreateStudentForm> {
       options: QueryOptions(document: gql(query)),
       builder: (QueryResult result,
           {VoidCallback? refetch, FetchMore? fetchMore}) {
+        
         if (result.hasException) {
           return Error(
             error: result.exception.toString(),
@@ -75,7 +76,7 @@ class _CreateStudentFormState extends State<CreateStudentForm> {
         });
 
         if (deals == null) {
-          options.add("1");
+          options.add("0.- No deal");
         }
 
         return Column(children: [
@@ -315,9 +316,10 @@ class _CreateStudentFormState extends State<CreateStudentForm> {
                             return CupertinoAlertDialog(
                               title: result!.exception == null
                                   ? const Text("OK")
+                                  : const Text("Error"),
+                              content: result!.exception == null
+                                  ? const Text("Alumno creado correctamente")
                                   : Text(result.exception.toString()),
-                              content:
-                                  const Text("Alumno creado correctamente"),
                               actions: [
                                 CupertinoDialogAction(
                                     child: TextButton(
