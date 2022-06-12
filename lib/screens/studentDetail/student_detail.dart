@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:gestor_fct/components/error.dart';
 import 'package:gestor_fct/constants.dart';
+import 'package:gestor_fct/screens/companyDetail/company_detail.dart';
 import 'package:gestor_fct/screens/students/students.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
@@ -25,7 +26,13 @@ class _StudentDetailState extends State<StudentDetail> {
       getStudentById (id: ${widget.id}) {
         firstName,
         lastName,
-        course
+        course,
+        deal {
+          company {
+            id
+            name
+          }
+        }
     }
     }
   """;
@@ -51,7 +58,7 @@ class _StudentDetailState extends State<StudentDetail> {
         ),
         title: Text(
           'Detalles del alumno',
-          style: Theme.of(context).textTheme.subtitle2!.copyWith(
+          style: Theme.of(context).textTheme.headline1!.copyWith(
                 fontFamily: 'Poppins',
                 color: Colors.black,
               ),
@@ -292,22 +299,11 @@ class _StudentDetailState extends State<StudentDetail> {
                                                       CrossAxisAlignment.start,
                                                   children: [
                                                     Text(
-                                                      'Bosonit',
+                                                      student['deal']['company']
+                                                          ['name'],
                                                       style: Theme.of(context)
                                                           .textTheme
                                                           .headline1,
-                                                    ),
-                                                    Padding(
-                                                      padding:
-                                                          const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                              0, 4, 0, 0),
-                                                      child: Text(
-                                                        'Tech & data',
-                                                        style: Theme.of(context)
-                                                            .textTheme
-                                                            .bodyText1,
-                                                      ),
                                                     ),
                                                   ],
                                                 ),
@@ -343,7 +339,19 @@ class _StudentDetailState extends State<StudentDetail> {
                                                         color: Colors.black,
                                                         size: 20,
                                                       ),
-                                                      onPressed: () {},
+                                                      onPressed: () {
+                                                        Navigator.push(
+                                                            context,
+                                                            MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                  CompanyDetail(
+                                                                      id: student['deal']
+                                                                              [
+                                                                              'company']
+                                                                          [
+                                                                          'id']),
+                                                            ));
+                                                      },
                                                     ),
                                                   ),
                                                 ],

@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:gestor_fct/constants.dart';
+import 'package:gestor_fct/screens/createStudent/createStudent.dart';
 
 class AddComponent extends StatefulWidget {
   const AddComponent({Key? key}) : super(key: key);
@@ -72,11 +73,17 @@ class _AddComponentState extends State<AddComponent>
                 color: Color(0xFF228F22),
               ),
               iconSize: 30,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const CreateStudent(),
+                    ));
+              },
             ),
           ),
         ),
-        
+
         // Add Company
         AnimatedAlign(
           duration: toggle
@@ -99,11 +106,17 @@ class _AddComponentState extends State<AddComponent>
                 color: Color(0xFF228F22),
               ),
               iconSize: 30,
-              onPressed: () { },
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const CreateStudent(),
+                    ));
+              },
             ),
           ),
         ),
-        
+
         // Add Deal
         AnimatedAlign(
           duration: toggle
@@ -126,7 +139,13 @@ class _AddComponentState extends State<AddComponent>
                 color: Color(0xFF228F22),
               ),
               iconSize: 30,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const CreateStudent(),
+                    ));
+              },
             ),
           ),
         ),
