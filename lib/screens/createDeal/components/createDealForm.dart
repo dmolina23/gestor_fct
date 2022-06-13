@@ -24,7 +24,7 @@ class _CreateDealFormState extends State<CreateDealForm> {
   """;
 
   final String createDeal = """
-    mutation createDeal(\$teacherId: ID!, \$companyID: ID!) {
+    mutation createDeal(\$teacherId: ID!, \$companyId: ID!) {
     createDeal (
         teacherId: \$teacherId,
         companyId: \$companyId,
@@ -120,10 +120,7 @@ class _CreateDealFormState extends State<CreateDealForm> {
                   return TextButton(
                     onPressed: () => {
                       runMutation({
-                        // Por ahora es 1
-                        // ignore: todo
-                        // TODO: Cambiarlo por el ID del usuario que ha hecho login
-                        "teacherId": 2,
+                        "teacherId": 1,
                         "companyId": int.parse(value.split('.')[0])
                       }),
                       value = "",
@@ -134,7 +131,7 @@ class _CreateDealFormState extends State<CreateDealForm> {
                               title: result!.exception == null
                                   ? const Text("OK")
                                   : const Text("Error"),
-                              content: result!.exception == null
+                              content: result.exception == null
                                   ? const Text("Acuerdo creado correctamente")
                                   : Text(result.exception.toString()),
                               actions: result.exception == null

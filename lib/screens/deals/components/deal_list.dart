@@ -41,7 +41,7 @@ query {
           List? deals = result.data!['getAllDeals'];
 
           if (deals == null) {
-            return const Error(error: 'No hay empresas todavía');
+            return const Error(error: 'No hay acuerdos todavía');
           }
 
           Future<void> _refresh() async {

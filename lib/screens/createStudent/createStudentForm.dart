@@ -317,7 +317,7 @@ class _CreateStudentFormState extends State<CreateStudentForm> {
                               title: result!.exception == null
                                   ? const Text("OK")
                                   : const Text("Error"),
-                              content: result!.exception == null
+                              content: result.exception == null
                                   ? const Text("Alumno creado correctamente")
                                   : Text(result.exception.toString()),
                               actions: [
