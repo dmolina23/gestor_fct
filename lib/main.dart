@@ -16,7 +16,7 @@ void main() async {
 
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
   if (sharedPreferences.getString("x-token") != null) {
-    token = '"${sharedPreferences.getString("x-token")!}"';
+    token = sharedPreferences.getString("x-token")!;
   }
 
   final HttpLink link = HttpLink("http://192.168.0.16:3000/graph",
@@ -52,6 +52,7 @@ class _MyAppState extends State<MyApp> {
   checkLoginStatus() async {
     sharedPreferences = await SharedPreferences.getInstance();
     if (sharedPreferences.getString("x-token") == null) {
+      // ignore: use_build_context_synchronously
       Navigator.of(context).pushAndRemoveUntil(
           MaterialPageRoute(
             builder: (context) => const LoginPage(),

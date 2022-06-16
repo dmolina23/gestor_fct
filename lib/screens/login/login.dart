@@ -45,6 +45,8 @@ class _LoginPageState extends State<LoginPage> {
 
     if (jsonResponse['ok']) {
       sharedPreferences.setString("x-token", jsonResponse['token']);
+      sharedPreferences.setInt("userId", jsonResponse['id']);
+      
       emailController.text = "";
       passwordController.text = "";
       // ignore: use_build_context_synchronously
