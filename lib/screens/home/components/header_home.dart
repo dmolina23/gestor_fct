@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class HeaderHome extends StatelessWidget {
-  const HeaderHome({Key? key}) : super(key: key);
+  const HeaderHome({Key? key, required this.username}) : super(key: key);
+
+  final String username;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +37,7 @@ class HeaderHome extends StatelessWidget {
                 children: [
                   Align(
                     alignment: const AlignmentDirectional(-0.8, 0),
-                    child: Text('Buenas tardes, David',
+                    child: Text('Buenas tardes, $username',
                         textAlign: TextAlign.start,
                         style: Theme.of(context)
                             .textTheme
@@ -45,7 +47,8 @@ class HeaderHome extends StatelessWidget {
                   Align(
                     alignment: const AlignmentDirectional(0, 0),
                     child: Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                       child: Text(
                         'Tienes 0 acciones pendientes',
                         textAlign: TextAlign.start,

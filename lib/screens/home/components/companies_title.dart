@@ -20,7 +20,7 @@ class CompaniesTitle extends StatelessWidget {
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                 child: Text(
-                  'Mis empresas',
+                  'Empresas',
                   textAlign: TextAlign.start,
                   style: Theme.of(context)
                       .textTheme

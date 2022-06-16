@@ -21,13 +21,10 @@ class SettingsScreen extends StatefulWidget {
 class _SettingsScreenState extends State<SettingsScreen> {
   bool? switchListTileValue;
   SharedPreferences? sharedPreferences;
-  int? userId;
-
   String? getUserData;
 
   Future<int?> getUserId() async {
     sharedPreferences = await SharedPreferences.getInstance();
-    userId = sharedPreferences!.getInt("userId");
     return sharedPreferences!.getInt("userId");
   }
 
