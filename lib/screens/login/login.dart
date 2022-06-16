@@ -46,6 +46,7 @@ class _LoginPageState extends State<LoginPage> {
     if (jsonResponse['ok']) {
       sharedPreferences.setString("x-token", jsonResponse['token']);
       sharedPreferences.setInt("userId", jsonResponse['id']);
+      sharedPreferences.setBool("is_admin", jsonResponse['admin']);
       
       emailController.text = "";
       passwordController.text = "";
