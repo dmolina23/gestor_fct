@@ -315,14 +315,17 @@ class _LoginPageState extends State<LoginPage> {
                                 child: InkWell(
                                   onTap: () {},
                                   child: Container(
-                                    width: 50,
-                                    height: 50,
+                                    width: 45,
+                                    height: 45,
                                     clipBehavior: Clip.antiAlias,
                                     decoration: const BoxDecoration(
                                       shape: BoxShape.circle,
                                     ),
                                     child: SvgPicture.asset(
-                                      'assets/images/social_GoogleWhite.svg',
+                                      'assets/images/google.svg',
+                                      color: Colors.white,
+                                      height: 15,
+                                      width: 15,
                                     ),
                                   ),
                                 ),
@@ -354,13 +357,14 @@ class _LoginPageState extends State<LoginPage> {
                                   clipBehavior: Clip.antiAliasWithSaveLayer,
                                   color: const Color(0xFF090F13),
                                   shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(50),
+                                    borderRadius: BorderRadius.circular(90),
                                   ),
                                   child: IconButton(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(2, 3, 2, 2),
                                     icon: const Icon(
                                       Icons.fingerprint_outlined,
-                                      color: Colors.black,
-                                      size: 30,
+                                      color: Colors.white,
+                                      size: 40,
                                     ),
                                     onPressed: () {},
                                   ),
