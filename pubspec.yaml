@@ -39,6 +39,7 @@ dependencies:
   http: ^0.13.4
   shared_preferences: ^2.0.15
   flutter_svg: 0.22.0
+  flutter_datetime_picker: 1.5.1
 
 dev_dependencies:
   flutter_test:

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:gestor_fct/components/error.dart';
+import 'package:gestor_fct/screens/createVisit/createVisit.dart';
 import 'package:gestor_fct/screens/home/home.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
@@ -191,7 +192,9 @@ class _CompanyDetailState extends State<CompanyDetail> {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 150,),
+                      const SizedBox(
+                        height: 150,
+                      ),
                       Padding(
                         padding:
                             const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 12),
@@ -249,7 +252,16 @@ class _CompanyDetailState extends State<CompanyDetail> {
                                   ],
                                 ),
                                 TextButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.pushAndRemoveUntil(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              CreateVisitWidget(
+                                                  companyId: widget.id),
+                                        ),
+                                        (route) => false);
+                                  },
                                   style: TextButton.styleFrom(
                                       primary: Colors.white,
                                       backgroundColor: Color(0xFF228F22),
