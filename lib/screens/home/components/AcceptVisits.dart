@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gestor_fct/screens/home/components/VisitCard.dart';
+import 'package:graphql_flutter/graphql_flutter.dart';
 
 class AcceptVisits extends StatefulWidget {
   const AcceptVisits({Key? key}) : super(key: key);
@@ -9,6 +10,18 @@ class AcceptVisits extends StatefulWidget {
 }
 
 class _AcceptVisitsState extends State<AcceptVisits> {
+  final String readAllVisits = """
+    query {
+      getAllVisits {
+        id
+        is_accepted
+        date
+        company {
+          name
+        }
+      }
+    }
+  """;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -23,7 +36,7 @@ class _AcceptVisitsState extends State<AcceptVisits> {
             Align(
               alignment: const AlignmentDirectional(-0.85, 1),
               child: Text(
-                'Nuevas visitas',
+                'Próximas visitas',
                 textAlign: TextAlign.start,
                 style: Theme.of(context).textTheme.bodyText1?.copyWith(
                       fontFamily: 'Poppins',
@@ -31,13 +44,42 @@ class _AcceptVisitsState extends State<AcceptVisits> {
                     ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-              child: SingleChildScrollView(
-                child: Column(
-                    mainAxisSize: MainAxisSize.max, children: [VisitCard()]),
-              ),
-            )
+            Query(
+                options: QueryOptions(document: gql(readAllVisits)),
+                builder: (QueryResult result,
+                    {VoidCallback? refetch, FetchMore? fetchMore}) {
+                  if (result.hasException) {
+                    return const Text("Error al cargar las empresas");
+                  }
+
+                  if (result.isLoading) {
+                    return const Text("Cargando datos...");
+                  }
+
+                  List? visits = result.data!['getAllVisits'];
+
+                  if (visits == null) {
+                    return const Text("No hay visitas todavía");
+                  }
+
+                  return Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                      child: SizedBox(
+                        height: 700,
+                        child: ListView.builder(
+                            scrollDirection: Axis.vertical,
+                            itemCount: visits.length,
+                            itemBuilder: (context, index) {
+                              var visit = visits[index];
+                              return VisitCard(
+                                date: visit['date'],
+                                companyName: visit['company']['name'],
+                                accepted: visit['is_accepted'],
+                              );
+                            }),
+                      ));
+                })
           ],
         ),
       ),

@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:gestor_fct/screens/companyDetail/company_detail.dart';
 
 class CompanyCard extends StatelessWidget {
-  const CompanyCard({Key? key}) : super(key: key);
+  const CompanyCard({Key? key, required this.name, required this.address, required this.id}) : super(key: key);
+
+  final String name;
+  final String address;
+  final String id;
 
   @override
   Widget build(BuildContext context) {
@@ -36,13 +40,13 @@ class CompanyCard extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                     child: Text(
-                      'Bosonit S.L.',
+                      name,
                       textAlign: TextAlign.start,
                       style: Theme.of(context).textTheme.bodyText1,
                     ),
                   ),
                   Text(
-                    'c/ Roldań y Marín, 12',
+                    address,
                     style: Theme.of(context).textTheme.bodyText1?.copyWith(
                           fontFamily: 'Poppins',
                           fontWeight: FontWeight.normal,
@@ -55,7 +59,8 @@ class CompanyCard extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const CompanyDetail(id: "1"))); //TODO: Cambiar por el id de la query
+                                builder: (context) => CompanyDetail(
+                                    id: id)));
                       },
                       style: TextButton.styleFrom(
                           primary: Colors.white,
