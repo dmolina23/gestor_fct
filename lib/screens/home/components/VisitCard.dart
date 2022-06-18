@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gestor_fct/constants.dart';
 
 class VisitCard extends StatefulWidget {
   const VisitCard(
@@ -67,12 +68,12 @@ class _VisitCardState extends State<VisitCard> {
                 ? Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                     child: CircleAvatar(
-                      backgroundColor: Color(0xFFF8898F),
+                      backgroundColor: backgroundColor,
                       child: IconButton(
                         onPressed: () {},
                         icon: const Icon(
-                          Icons.clear_outlined,
-                          color: Color(0xFFFF1020),
+                          Icons.arrow_forward_ios,
+                          color: Colors.black,
                           size: 20,
                         ),
                       ),

@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:gestor_fct/screens/home/components/VisitCard.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
@@ -6,6 +7,7 @@ class AcceptVisits extends StatefulWidget {
   const AcceptVisits({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _AcceptVisitsState createState() => _AcceptVisitsState();
 }
 

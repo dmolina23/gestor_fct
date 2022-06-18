@@ -29,11 +29,6 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return FutureBuilder(
         future: getUserId(),
@@ -69,8 +64,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         );
                       }
 
-                      Map<String, dynamic> userData =
+                      Map<String, dynamic>? userData =
                           result.data!["getTeacherById"];
+
+                      if (userData == null) {
+                        return Error(error: result.exception.toString());
+                      }
 
                       return SafeArea(
                         child: GestureDetector(
